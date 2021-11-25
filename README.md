@@ -1,2 +1,2 @@
 # combinational
-Combinate characters and do something to them
+Get all combinations of all the characters in a list and allows doing something to them
