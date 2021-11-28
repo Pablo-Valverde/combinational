@@ -24,8 +24,6 @@ def __combinate(characters, depth = 5, prefix = "", func = print):
                         __combinate(characters, depth - 1 , prefix, func)
                 prefix = prefix[:-c.__len__()]
 
-#----Auxiliar -> to another proyect----#
-
 #----Dict combinate----#
 
 __keywords = set()
@@ -59,42 +57,3 @@ def writeb():
         global __buffer
         file.write(__buffer)
         __buffer = ""
-
-#----Hash paswords----#
-"""
-import hashlib
-
-__hashes = {}
-
-def matches(c):
-        return (c >= ' ' and c <= '/') or (c >= ':' and c <= '~')
-
-def format(s):
-        sformated = ""
-        for c in s:
-                if not matches(c):
-                        sformated += ord(c).__str__()
-                else:
-                        sformated += c
-                sformated += '.'
-        return sformated[:-1]
-
-def hash(s):
-        if __hashes.__len__() == 100000:
-                write()
-                __hashes.clear()
-        __hashes[s] = format(sha256(s))
-
-def write():
-        buffer = ""
-        for key in __hashes:
-                buffer += key + ":" + __hashes[key] + "\n"
-        with open("", "ab") as file:
-                file.write(buffer.encode())
-
-def sha256(s):
-    und_hash = hashlib.sha256()
-    und_hash.update(s.encode())
-    dig_hash = und_hash.digest().decode("Latin1")
-    return dig_hash
-"""
