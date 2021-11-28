@@ -1,3 +1,8 @@
+__keywords = set()
+__buffer = ""
+filename = "YOUR FILE HERE"
+file = open(filename, "w")
+
 def generate_comb(cfrom, cto):
         charlist = []
         for dec in range(ord(cfrom), ord(cto)+1):
@@ -24,11 +29,6 @@ def __combinate(characters, depth = 5, prefix = "", func = print):
                 prefix = prefix[:-c.__len__()]
 
 #----Dict combinate----#
-
-__keywords = set()
-__buffer = ""
-filename = "YOUR FILE HERE"
-file = open(filename, "w")
 
 def addword(word):
         split = word
