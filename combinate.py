@@ -58,7 +58,7 @@ def func(comb):
 
 def writeb():
         global __buffer
-        _thread.start_new_thread(file.write, (__buffer,))
+        file.write(__buffer)
         __buffer = ""
 
 #----Hash paswords----#
@@ -99,9 +99,8 @@ def sha256(s):
     dig_hash = und_hash.digest().decode("Latin1")
     return dig_hash
 
-phrase = "gojo lgorio 1 2"
+phrase = "j o l g o r i o 1 2"
 addwords(phrase.split(" "))
 print(__keywords)
-combinate(__keywords, 4, func=func)
+combinate(__keywords, 10, func=func)
 writeb()
-file.close()
