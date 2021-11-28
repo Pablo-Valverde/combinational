@@ -17,7 +17,6 @@ def calc_iterations(characters, depth):
 
 def combinate(characters, depth = 5, prefix = "", func = print):
         total_iterations = calc_iterations(characters, depth)
-        print(total_iterations)
         __combinate(characters, depth, prefix, func)
         return total_iterations
 
