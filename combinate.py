@@ -28,11 +28,10 @@ def __combinate(characters, depth = 5, prefix = "", func = print):
 
 #----Dict combinate----#
 
-import _thread
-
 __keywords = set()
 __buffer = ""
-file = open("E:\Programs\\test\contras.txt", "w")
+filename = "YOUR FILE HERE"
+file = open(filename, "w")
 
 def addword(word):
         split = word
@@ -52,7 +51,7 @@ def addwords(words):
 
 def func(comb):
         global __buffer
-        __buffer += comb + " \n"
+        __buffer += comb + "\n"
         if __buffer.split("\n").__len__() > 10000:
                 writeb()
 
@@ -62,7 +61,7 @@ def writeb():
         __buffer = ""
 
 #----Hash paswords----#
-
+"""
 import hashlib
 
 __hashes = {}
@@ -90,7 +89,7 @@ def write():
         buffer = ""
         for key in __hashes:
                 buffer += key + ":" + __hashes[key] + "\n"
-        with open("D:\Programs\hash\hashes.txt", "ab") as file:
+        with open("", "ab") as file:
                 file.write(buffer.encode())
 
 def sha256(s):
@@ -98,9 +97,4 @@ def sha256(s):
     und_hash.update(s.encode())
     dig_hash = und_hash.digest().decode("Latin1")
     return dig_hash
-
-phrase = "j o l g o r i o 1 2"
-addwords(phrase.split(" "))
-print(__keywords)
-combinate(__keywords, 10, func=func)
-writeb()
+"""
