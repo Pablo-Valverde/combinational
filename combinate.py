@@ -12,6 +12,7 @@ def calc_iterations(characters, depth):
 
 def combinate(characters, depth = 5, prefix = "", func = print):
         total_iterations = calc_iterations(characters, depth)
+        print(total_iterations)
         __combinate(characters, depth, prefix, func)
         return total_iterations
 
@@ -28,7 +29,6 @@ def __combinate(characters, depth = 5, prefix = "", func = print):
 #----Dict combinate----#
 
 import _thread
-from os import close
 
 __keywords = set()
 __buffer = ""
@@ -52,13 +52,13 @@ def addwords(words):
 
 def func(comb):
         global __buffer
-        __buffer += comb + "\n"
+        __buffer += comb + " \n"
         if __buffer.split("\n").__len__() > 10000:
-                _thread.start_new_thread(writeb, ())
+                writeb()
 
 def writeb():
         global __buffer
-        file.write(__buffer)
+        _thread.start_new_thread(file.write, (__buffer,))
         __buffer = ""
 
 #----Hash paswords----#
@@ -99,8 +99,9 @@ def sha256(s):
     dig_hash = und_hash.digest().decode("Latin1")
     return dig_hash
 
-phrase = "sacarmela for the win madre 1 2 3 4 5 6 7 8 9 0"
+phrase = "gojo lgorio 1 2"
 addwords(phrase.split(" "))
+print(__keywords)
 combinate(__keywords, 4, func=func)
 writeb()
 file.close()
