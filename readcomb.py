@@ -1,3 +1,5 @@
-with open("D:\Programs\hash\hashes.txt", "w") as file:
+with open("E:\Programs\\test\contras.txt", "r") as file:
         for line in file:
-                print(line)
+                if line[:-1] == "lamadre12":
+                        print("got'em")
+                        break
